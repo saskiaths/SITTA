@@ -32,15 +32,20 @@ function register() {
     alert("Semua kolom wajib diisi!");
     return;
   }
+
   if (password !== repassword) {
     alert("Password tidak sama!");
     return;
   }
 
-  let userBaru = JSON.parse(localStorage.getItem("usersBaru")) || [];
+  // ambil data user localStorage
+  let usersBaru =
+    JSON.parse(localStorage.getItem("usersBaru")) || [];
 
+  // gabungkan user default + user register
   let semuaUser = [...dataPengguna, ...usersBaru];
 
+  // cek email sudah ada atau belum
   let cekUser = semuaUser.find(function (user) {
     return user.email === email;
   });
@@ -49,6 +54,8 @@ function register() {
     alert("Email sudah terdaftar!");
     return;
   }
+
+  // user baru
   let newUser = {
     id: Date.now(),
     nama: nama,
@@ -56,20 +63,26 @@ function register() {
     username: username,
     password: password,
     role: "User",
-    lokasi: "-",
+    lokasi: "-"
   };
 
+  // simpan
   usersBaru.push(newUser);
 
-  localStorage.setItem("usersBaru", JSON.stringify(usersBaru));
+  localStorage.setItem(
+    "usersBaru",
+    JSON.stringify(usersBaru)
+  );
 
   alert("Registrasi berhasil!");
 
   closeRegister();
 
-  document.getElementById("formRegister").style.display = "none";
+  document.getElementById("formRegister").style.display =
+    "none";
 
-  document.getElementById("btndaftar").style.display = "block";
+  document.getElementById("btndaftar").style.display =
+    "block";
 }
 
 function resetPassword() {
