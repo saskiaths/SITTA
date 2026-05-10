@@ -38,14 +38,14 @@ function register() {
     return;
   }
 
-  // ambil data user localStorage
+  // ambil user dari localStorage
   let usersBaru =
     JSON.parse(localStorage.getItem("usersBaru")) || [];
 
-  // gabungkan user default + user register
+  // gabungkan data user
   let semuaUser = [...dataPengguna, ...usersBaru];
 
-  // cek email sudah ada atau belum
+  // cek email sudah ada
   let cekUser = semuaUser.find(function (user) {
     return user.email === email;
   });
@@ -55,7 +55,6 @@ function register() {
     return;
   }
 
-  // user baru
   let newUser = {
     id: Date.now(),
     nama: nama,
@@ -66,7 +65,6 @@ function register() {
     lokasi: "-"
   };
 
-  // simpan
   usersBaru.push(newUser);
 
   localStorage.setItem(
