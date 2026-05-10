@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tracking Pengiriman</title>
+    <link rel="stylesheet" href="css/main.css" />
+    <script src="js/data.js"></script>
+  </head>
+
+  <body>
+    <div class="sidebar">
+      <img src="img/logo SITTA.png" class="logo" />
+
+      <a href="dashboard.html">Dashboard</a>
+
+      <a href="stok.html"> Informasi Bahan Ajar </a>
+
+      <a href="tracking.html"> Tracking Pengiriman </a>
+
+      <div class="menu-dropdown">
+        <a href="#"> Laporan ▼ </a>
+
+        <div class="dropdown">
+          <a href="monitoring.html"> Monitoring Progress DO Bahan Ajar </a>
+
+          <a href="rekapba.html"> Rekap Bahan Ajar </a>
+        </div>
+      </div>
+
+      <a href="transaksi.html"> History Transaksi Bahan Ajar </a>
+      <a href="#" onclick="logout()">Keluar Akun</a>
+    </div>
+
+    <div class="main">
+      <div class="navbar">
+        <h3>Tracking Pengiriman</h3>
+
+        <h3 id="greeting" class="greeting" style="font-family: monospace"></h3>
+      </div>
+
+      <div class="content">
+        <div class="tracking-search">
+          <label><b>No. DO / Billing</b></label>
+          <div class="search-box">
+            <input
+              type="text"
+              id="trackingInput"
+              placeholder="Masukkan nomor tracking"
+            />
+
+            <button onclick="lacakPaket()">Lacak</button>
+            <button class="btn-reset" onclick="resetTracking()">Reset</button>
+          </div>
+        </div>
+        <div id="hasilTracking"></div>
+      </div>
+    </div>
+    <script src="js/script.js"></script>
+  </body>
+</html>

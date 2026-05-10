@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Informasi Bahan Ajar</title>
+    <link rel="stylesheet" href="css/main.css" />
+    <script src="js/data.js"></script>
+  </head>
+  <body>
+    <div class="sidebar">
+      <img src="img/logo SITTA.png" class="logo" />
+
+      <a href="dashboard.html">Dashboard</a>
+
+      <a href="stok.html"> Informasi Bahan Ajar </a>
+
+      <a href="tracking.html"> Tracking Pengiriman </a>
+
+      <div class="menu-dropdown">
+        <a href="#"> Laporan ▼ </a>
+
+        <div class="dropdown">
+          <a href="monitoring.html"> Monitoring Progress DO Bahan Ajar </a>
+
+          <a href="rekapba.html"> Rekap Bahan Ajar </a>
+        </div>
+      </div>
+
+      <a href="transaksi.html"> History Transaksi Bahan Ajar </a>
+      <a href="#" onclick="logout()">Keluar Akun</a>
+    </div>
+
+    <div class="main">
+      <div class="navbar">
+        <h3>Informasi Bahan Ajar</h3>
+
+        <h3 id="greeting" class="greeting" style="font-family: monospace"></h3>
+      </div>
+
+      <div id="admin-menu"></div>
+
+      <div class="content" id="content-bahan-ajar"></div>
+    </div>
+    <div id="popup" class="popup">
+      <div class="popup-content">
+        <span class="close" onclick="closePopup()"> &times; </span>
+        <div id="detail-content"></div>
+      </div>
+    </div>
+
+    <div id="popupTambah" class="popup">
+      <div class="popup-tambah">
+        <span class="close" onclick="closeTambah()"> &times;</span>
+        <h2>Tambah Bahan Ajar</h2>
+
+        <label class="label-tambah">Kode Lokasi</label>
+        <input
+          id="newKodeLokasi"
+          class="detail-input"
+          placeholder="Kode Lokasi"
+        />
+
+        <label class="label-tambah">Kode Barang</label>
+        <input
+          id="newKodeBarang"
+          class="detail-input"
+          placeholder="Kode Barang"
+        />
+
+        <label class="label-tambah">Nama Barang</label>
+        <input
+          id="newNamaBarang"
+          class="detail-input"
+          placeholder="Masukkan nama bahan ajar"
+        />
+
+        <label class="label-tambah">Jenis Barang</label>
+        <input id="newJenisBarang" class="detail-input" placeholder="BMP" />
+
+        <label class="label-tambah">Edisi</label>
+        <input id="newEdisi" class="detail-input" placeholder="Edisi" />
+
+        <label class="label-tambah">Stok</label>
+        <input id="newStok" class="detail-input" placeholder="Jumlah stok" />
+
+        <label class="label-tambah">Cover</label>
+        <input
+          type="file"
+          id="newCover"
+          class="detail-input"
+          accept="image/*"
+        />
+        <button class="save-btn" onclick="tambahBahanAjar()">Simpan</button>
+      </div>
+    </div>
+    <script src="js/script.js"></script>
+  </body>
+</html>
